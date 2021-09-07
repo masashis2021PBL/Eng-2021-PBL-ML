@@ -10,11 +10,12 @@ def install_packages ():
 	subprocess.call (["cd", ~/"])
 	config.logger.info ("Update packages")
 	subprocess.call (["sudo", "apt-get", "-y", "update"])
+	subprocess.call (["sudo", "apt-get", "-y", "upgrade"])
 
 	config.logger.info ("Install packages")
 	subprocess.call (["sudo", "apt-get", "-y", "install", "python3-pip"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "python-dev"])
-	subprocess.call (["sudo", "apt-get", "-y", "install", "build-essenntial"])
+	subprocess.call (["sudo", "apt-get", "-y", "install", "build-essential"])
 	subprocess.call (["sudo", "pip3", "install", "--upgrade", "setuptools"])
 	subprocess.call (["sudo", "pip3", "install", "--upgrade", "pip"])
 	subprocess.call (["sudo", "pip3", "install", "rpi.gpio"])
