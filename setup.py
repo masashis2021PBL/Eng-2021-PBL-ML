@@ -7,7 +7,7 @@ import subprocess
 import config
 
 def install_packages ():
-	subprocess.call (["cd", ~/"])
+#	subprocess.call (["cd", ~/"])
 	config.logger.info ("Update packages")
 	subprocess.call (["sudo", "apt-get", "-y", "update"])
 	subprocess.call (["sudo", "apt-get", "-y", "upgrade"])
