@@ -7,14 +7,16 @@ import subprocess
 import config
 
 def install_packages ():
-#	subprocess.call (["cd", ~/"])
+#	subprocess.call (["cd", /home/pi"])
 	config.logger.info ("Update packages")
 	subprocess.call (["sudo", "apt-get", "-y", "update"])
 	subprocess.call (["sudo", "apt-get", "-y", "upgrade"])
 
 	config.logger.info ("Install packages")
+	subprocess.call (["sudo", "apt-get", "-y", "install", "config"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "python3-pip"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "python-dev"])
+	subprocess.call (["sudo", "apt-get", "-y", "install", "python3-scipy"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "build-essential"])
 	subprocess.call (["sudo", "pip3", "install", "--upgrade", "setuptools"])
 	subprocess.call (["sudo", "pip3", "install", "--upgrade", "pip"])
@@ -32,11 +34,11 @@ def install_packages ():
 
 	config.logger.info ("Install deep-learning packages")
 	subprocess.call (["sudo", "apt-get", "-y", "install", "libatlas-base-dev"])
-	subprocess.call (["sudo", "pip3", "--default-timeout=100", "install", "tensorflow"])
-	subprocess.call (["sudo", "pip3", "--default-timeout=100", "install", "keras"])
+	subprocess.call (["sudo", "pip3", "--default-timeout=100", "install", "tensorflow==1.15.5"])
+	subprocess.call (["sudo", "pip3", "--default-timeout=100", "install", "keras==2.3.1"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "libatlas-base-dev"])
 	subprocess.call (["sudo", "git", "clone", "https://github.com/fchollet/deep-learning-models.git"])
-	subprocess.call (["wget", "-P", "~/deep-learning-models", "https://github.com/masashis2021PBL/Eng-2021-PBL-ML/raw/main/elephant.jpg"])
+	subprocess.call (["wget", "-P", "/home/pi/deep-learning-models", "https://github.com/masashis2021PBL/Eng-2021-PBL-ML/raw/main/elephant.jpg"])
 
 
 ########## main () ##########
