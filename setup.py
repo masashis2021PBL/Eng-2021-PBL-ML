@@ -29,6 +29,7 @@ def install_packages ():
 	subprocess.call (["sudo", "pip3", "install", "python-smbus"])
 	subprocess.call (["sudo", "pip3", "install", "jupyter"])
 	subprocess.call (["sudo", "pip3", "install", "pandas"])
+	subprocess.call (["sudo", "pip3", "install", "plotly"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "python3-matplotlib"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "python3-numpy"])
 	subprocess.call (["sudo", "apt-get", "-y", "install", "git"])
